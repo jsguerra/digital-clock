@@ -1,1 +1,135 @@
-/* No CSS *//*# sourceMappingURL=style.css.map */
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#ebc0fd), to(#d9ded8));
+  background-image: linear-gradient(to top, #ebc0fd 0%, #d9ded8 100%);
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.clock {
+  background-image: url("../images/clock2.png"), linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border: 10px solid black;
+  border-radius: 50%;
+  width: 500px;
+  height: 500px;
+  position: relative;
+}
+
+.clock::before {
+  content: '';
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: black;
+  border-radius: 50%;
+  z-index: 20;
+}
+
+.clock .hour,
+.clock .min,
+.clock .sec {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.clock .hour {
+  width: 300px;
+  height: 300px;
+}
+
+.clock .hour .hr {
+  height: 100%;
+  width: 100%;
+}
+
+.clock .hour .hr::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  width: 8px;
+  height: 50%;
+  background-color: black;
+  border-radius: 6px 6px 0 0;
+  z-index: 10;
+}
+
+.clock .min {
+  width: 425px;
+  height: 425px;
+}
+
+.clock .min .mn {
+  height: 100%;
+  width: 100%;
+}
+
+.clock .min .mn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  width: 8px;
+  height: 50%;
+  background-color: black;
+  border-radius: 6px 6px 0 0;
+  z-index: 11;
+}
+
+.clock .sec {
+  width: 350px;
+  height: 350px;
+}
+
+.clock .sec .sc {
+  height: 100%;
+  width: 100%;
+}
+
+.clock .sec .sc::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  width: 8px;
+  height: 60%;
+  background-color: red;
+  border-radius: 6px 6px 6px 6px;
+  z-index: 12;
+}
+/*# sourceMappingURL=style.css.map */
