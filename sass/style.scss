@@ -10,12 +10,27 @@ html {
 }
 
 body {
+  font-family: sans-serif;
   background-image: linear-gradient(to top, #ebc0fd 0%, #d9ded8 100%);
+  color: #222;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  > footer {
+    margin-top: 40px;
+  }
+}
+
+a {
+  text-decoration: none;
+
+  &:focus,
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 h1 {
@@ -25,15 +40,17 @@ h1 {
 }
 
 .clock {
-  background-image: url('../images/clock2.png'), linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+  background-image: url('../images/clock3.png'), linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   border: 10px solid black;
   border-radius: 50%;
   box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
-  width: 500px;
-  height: 500px;
+  width: 100vw;
+  height: 100vh;
+  max-width: 500px;
+  max-height: 500px;
   position: relative;
 
   &::before {
@@ -61,8 +78,8 @@ h1 {
   }
 
   .hour {
-    width: 300px;
-    height: 300px;
+    width: calc((300 / 500)*100%);
+    height: calc((300 / 500)*100%);
 
     .hr {
       height: 100%;
@@ -74,9 +91,10 @@ h1 {
         top: 0;
         left: 50%;
         transform: translate(-50%,0);
-        width: 8px;
+        width: 10px;
         height: 50%;
         background-color: black;
+        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.35);
         border-radius: 6px 6px 0 0;
         z-index: 10;
       }
@@ -84,8 +102,8 @@ h1 {
   } // .hour
 
   .min {
-    width: 425px;
-    height: 425px;
+    width: calc((425 / 500)*100%);
+    height: calc((425 / 500)*100%);
 
     .mn {
       height: 100%;
@@ -100,6 +118,7 @@ h1 {
         width: 8px;
         height: 50%;
         background-color: black;
+        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.35);
         border-radius: 6px 6px 0 0;
         z-index: 11;
       }
@@ -107,8 +126,8 @@ h1 {
   } // .hour
 
   .sec {
-    width: 350px;
-    height: 350px;
+    width: calc((350 / 500)*100%);
+    height: calc((350 / 500)*100%);
 
     .sc {
       height: 100%;
@@ -120,9 +139,10 @@ h1 {
         top: 0;
         left: 50%;
         transform: translate(-50%,0);
-        width: 8px;
+        width: 4px;
         height: 60%;
         background-color: red;
+        box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.35);
         border-radius: 6px 6px 6px 6px;
         z-index: 12;
       }
