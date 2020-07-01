@@ -90,8 +90,8 @@ h1 {
 }
 
 .clock .hour {
-  width: 300px;
-  height: 300px;
+  width: calc((300 / 500)*100%);
+  height: calc((300 / 500)*100%);
 }
 
 .clock .hour .hr {
@@ -116,8 +116,8 @@ h1 {
 }
 
 .clock .min {
-  width: 425px;
-  height: 425px;
+  width: calc((425 / 500)*100%);
+  height: calc((425 / 500)*100%);
 }
 
 .clock .min .mn {
@@ -142,8 +142,8 @@ h1 {
 }
 
 .clock .sec {
-  width: 350px;
-  height: 350px;
+  width: calc((350 / 500)*100%);
+  height: calc((350 / 500)*100%);
 }
 
 .clock .sec .sc {
