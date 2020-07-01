@@ -11,8 +11,10 @@ html {
 }
 
 body {
+  font-family: sans-serif;
   background-image: -webkit-gradient(linear, left bottom, left top, from(#ebc0fd), to(#d9ded8));
   background-image: linear-gradient(to top, #ebc0fd 0%, #d9ded8 100%);
+  color: #222;
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -29,6 +31,18 @@ body {
           align-items: center;
 }
 
+body > footer {
+  margin-top: 40px;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:focus, a:hover {
+  text-decoration: underline;
+}
+
 h1 {
   font-family: sans-serif;
   font-size: 45px;
@@ -36,7 +50,7 @@ h1 {
 }
 
 .clock {
-  background-image: url("../images/clock2.png"), linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+  background-image: url("../images/clock3.png"), linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -44,8 +58,10 @@ h1 {
   border-radius: 50%;
   -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
           box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
-  width: 500px;
-  height: 500px;
+  width: 100vw;
+  height: 100vh;
+  max-width: 500px;
+  max-height: 500px;
   position: relative;
 }
 
@@ -90,9 +106,11 @@ h1 {
   left: 50%;
   -webkit-transform: translate(-50%, 0);
           transform: translate(-50%, 0);
-  width: 8px;
+  width: 10px;
   height: 50%;
   background-color: black;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.35);
+          box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.35);
   border-radius: 6px 6px 0 0;
   z-index: 10;
 }
@@ -117,6 +135,8 @@ h1 {
   width: 8px;
   height: 50%;
   background-color: black;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.35);
+          box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.35);
   border-radius: 6px 6px 0 0;
   z-index: 11;
 }
@@ -138,9 +158,11 @@ h1 {
   left: 50%;
   -webkit-transform: translate(-50%, 0);
           transform: translate(-50%, 0);
-  width: 8px;
+  width: 4px;
   height: 60%;
   background-color: red;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.35);
+          box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.35);
   border-radius: 6px 6px 6px 6px;
   z-index: 12;
 }
