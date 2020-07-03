@@ -1,21 +1,28 @@
-'use strict';
-
-const deg = 6, // 360 deg / 60 deg = 6
-      hourEl = document.getElementById('hr'),
+// Clock Elements
+const hourEl = document.getElementById('hr'),
       minutesEl = document.getElementById('mn'),
       secondsEl = document.getElementById('sc');
 
-const clock = () => {
-  let day = new Date(),
-      seconds = day.getSeconds() * deg,
-      minutes = (day.getMinutes() * deg) + (seconds / 60),
-      hours = (day.getHours() * (360 / 12)) + ((day.getMinutes() * deg) / 12);
-  
-  hourEl.style.transform = `rotateZ(${(hours)}deg)`;
-  minutesEl.style.transform = `rotateZ(${minutes}deg)`;
-  secondsEl.style.transform = `rotateZ(${seconds}deg)`;
+// Clock Hand Rotation
+const clockRotate = (el, time) => {
+  el.style.transform = `rotateZ(${(time)}deg)`;
 }
 
-clock();
+// Clock Setup and Equations
+const clock = () => {  
+  let day = new Date(),
+      seconds = day.getSeconds(),
+      minutes = day.getMinutes(),
+      hours = day.getHours()
+      scInterval = (seconds * (360 / 60)),
+      mnInterval = ((minutes * (360 / 60)) + (seconds / 60)),
+      hrInterval = ((hours * (360 / 12)) + ((minutes * (360 / 60)) / 12));
+      
+  clockRotate(secondsEl, scInterval);
+  clockRotate(minutesEl, mnInterval);
+  clockRotate(hourEl, hrInterval);
+}
 
+// Init Clock and set Interval
+clock();
 setInterval(clock, 1000);
