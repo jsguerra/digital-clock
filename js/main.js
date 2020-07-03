@@ -11,16 +11,13 @@ const clockRotate = (el, time) => {
 // Clock Setup and Equations
 const clock = () => {  
   let day = new Date(),
-      seconds = day.getSeconds(),
-      minutes = day.getMinutes(),
-      hours = day.getHours()
-      scInterval = (seconds * (360 / 60)),
-      mnInterval = ((minutes * (360 / 60)) + (seconds / 60)),
-      hrInterval = ((hours * (360 / 12)) + ((minutes * (360 / 60)) / 12));
+      seconds = day.getSeconds() * (360 / 60),
+      minutes = (day.getMinutes() * (360 / 60)) + (seconds / 60),
+      hours = (day.getHours() * (360 / 12)) + (day.getMinutes() * (360 / 60)) / 12;
       
-  clockRotate(secondsEl, scInterval);
-  clockRotate(minutesEl, mnInterval);
-  clockRotate(hourEl, hrInterval);
+  clockRotate(secondsEl, seconds);
+  clockRotate(minutesEl, minutes);
+  clockRotate(hourEl, hours);
 }
 
 // Init Clock and set Interval
