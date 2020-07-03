@@ -18,8 +18,10 @@ const clock = () => {
   clockRotate(secondsEl, seconds);
   clockRotate(minutesEl, minutes);
   clockRotate(hourEl, hours);
+
+  window.requestAnimationFrame(clock);
 }
 
-// Init Clock and set Interval
+// Init Clock
 clock();
-setInterval(clock, 1000);
+// setInterval(clock);
