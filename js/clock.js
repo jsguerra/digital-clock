@@ -1,3 +1,7 @@
+// ===========================================
+// First approach to Analog Clock
+// ===========================================
+
 // Clock Elements
 const hourEl = document.getElementById('hr'),
       minutesEl = document.getElementById('mn'),
@@ -26,6 +30,7 @@ const clock = () => {
 clock();
 // setInterval(clock);
 
+// ===========================================
 // Second approach to Analog Clock
 // ===========================================
 const clockElement = document.querySelector("#analogClock");
@@ -54,3 +59,27 @@ const timer = () => {
   requestAnimationFrame(timer);
 }
 timer();
+
+// ===========================================
+// General Calendar Dates
+// ===========================================
+const calDate = ()=> {
+  const dateEl = document.getElementById('date');
+
+  let today = new Date(),
+      date = today.getDate(),
+      day = today.getDay(),
+      month = today.getMonth(),
+      year = today.getFullYear();
+
+  months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+  const dateMarkup = `
+  <span class="day">${days[day]}</span> <span class="date-number">${date}</span>, <span class="day">${months[month]}</span> <span class="day">${year}</span>
+  `;
+
+  dateEl.insertAdjacentHTML('beforeend', dateMarkup);
+}
+
+calDate();
