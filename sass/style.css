@@ -1,15 +1,14 @@
-html {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  font-size: 16px;
-  height: 100%;
-}
-
 *, *:before, *:after {
   -webkit-box-sizing: inherit;
           box-sizing: inherit;
   margin: 0;
   padding: 0;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 16px;
 }
 
 body {
@@ -21,6 +20,7 @@ body {
 
 body > footer {
   margin-top: 40px;
+  padding: 20px;
 }
 
 a {
@@ -43,6 +43,8 @@ footer {
   text-align: center;
 }
 
+/* Main container
+========================== */
 .box {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -54,8 +56,11 @@ footer {
   max-width: 750px;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 40px;
 }
 
+/* first clock concept
+========================== */
 .clock {
   background-image: url("../images/clock3.png"), linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
   background-repeat: no-repeat;
@@ -174,6 +179,8 @@ footer {
   z-index: 12;
 }
 
+/* Second clock concept
+========================== */
 #analogClock {
   display: -ms-grid;
   display: grid;
@@ -223,7 +230,7 @@ footer {
 
 #analogClock .minute {
   background-color: goldenrod;
-  height: 4px;
+  height: 5px;
   width: 140px;
   top: 0;
   left: 70px;
@@ -254,6 +261,17 @@ footer {
   z-index: 100;
 }
 
+/* Third clock example
+========================== */
+#clockWireframe {
+  border: 2px solid black;
+  width: 350px;
+  height: 350px;
+  margin: auto;
+}
+
+/* Date box styles
+========================== */
 #date {
   font-size: 24px;
   background-color: rgba(249, 249, 249, 0.35);
