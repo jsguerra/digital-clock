@@ -61,6 +61,44 @@ const timer = () => {
 timer();
 
 // ===========================================
+// Third approach to Analog Clock
+// ===========================================
+const boxSec = document.querySelector('#clockWireframe .second'),
+      boxMin = document.querySelector('#clockWireframe .minute'),
+      boxHour = document.querySelector('#clockWireframe .hour');
+
+// Clock2 Hand Rotation
+const clockRotate2 = (el, time) => {
+  el.style.transform = `translate3d(-50%,-50%,0) rotateZ(${(time)}deg)`;
+}
+
+// Clock Setup and Equations
+const clock2 = () => {
+  let date = new Date(),
+      milliseconds = date.getMilliseconds(),
+      seconds = date.getSeconds(),
+      hours = date.getHours(),
+      minutes = date.getMinutes();
+
+  seconds += milliseconds / 1000; // using milliseconds smooths hand motions
+  minutes += seconds / 60;
+  hours += minutes / 60;
+
+  // Normalize to the 12 hour clock
+  if (hours > 12) {
+    hours -= 12;
+  }
+      
+  clockRotate2(boxSec, seconds * 6);
+  clockRotate2(boxMin, minutes * 6);
+  clockRotate2(boxHour, hours * 30);
+
+  window.requestAnimationFrame(clock2);
+}
+
+clock2();
+
+// ===========================================
 // General Calendar Dates
 // ===========================================
 const calDate = ()=> {
